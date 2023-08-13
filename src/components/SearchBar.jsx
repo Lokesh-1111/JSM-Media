@@ -6,10 +6,25 @@ import { useNavigate } from 'react-router-dom'
 import React from 'react'
 
 const SearchBar = () => {
+
+  const [searchTerm,setSearchTerm] = useState('')
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+
+    if(searchTerm){
+      navigate(`/search/${searchTerm}`)
+      // console.log(searchTerm);
+      setSearchTerm('')
+    }
+  }
+
   return (
     <Paper
-    // component='form'
-    onSubmit={()=>{}}
+    component='form'
+    onSubmit={handleSubmit}
     sx={{borderRadius:5,
     border:'1px solid #e3e3e3',
     Pl:4,
@@ -19,8 +34,9 @@ const SearchBar = () => {
         <input 
         className='search-bar'
         placeholder='search'
-        value=""
-        onChange={()=>{}}/>
+        value={searchTerm}
+        onChange={(e)=>{setSearchTerm(e.target.value)}} 
+        />
         <IconButton type='submit' sx={{p:'10px',color:'red'}}>
         <Search />
         </IconButton>
