@@ -9,8 +9,8 @@ const App = () => (
     <Navbar />
     <Routes>
       <Route path="/" element={<Feed />} />
-      <Route path="/VideoDetail/:id" element={<VideoDetail />} />
-      {/* <Route path="/ChannnelDetail/:id" element={<ChannelDetail />} /> */}
+      <Route path="/video/:id" element={<VideoDetail />} />
+      {/* <Route path="/Channnel/:id" element={<ChannelDetail />} /> */}
       <Route path="/Search/:searchTerm" element={<SearchFeed />} />
     </Routes>
   </Box>

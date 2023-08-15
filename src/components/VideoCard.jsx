@@ -9,12 +9,12 @@ import videos from './videos'
 const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
   
   return (
-    <Card sx={{ width: { md: '308px', xs: '100%' }, boxShadow: 'none', borderRadius: 0 }} >
+    <Card style={{display:'flex', flexDirection:'row',minWidth:'200px',maxWidth:'400px',flexWrap:'wrap'}} >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
-          sx={{ height: 180, width: 380 }} />
+          sx={{ height: 180, width:{xs:'100%',sm:'358px',md:'320px'} }} />
       </Link>
       <CardContent sx={{ backgroundColor: '#1e1e1e', height: '106px' }}>
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
