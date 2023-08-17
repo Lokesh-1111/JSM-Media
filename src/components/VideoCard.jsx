@@ -9,7 +9,7 @@ import videos from './videos'
 const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
   
   return (
-    <Card style={{display:'flex', flexDirection:'row',minWidth:'200px',maxWidth:'400px',flexWrap:'wrap'}} >
+    <Card sx={{ width: { xs: '100%', sm: '358px', md: "320px", }, boxShadow: "none", borderRadius: 0 }}>
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
